@@ -32,7 +32,7 @@ jobs:
       - name: Download Vazirmatn fonts
         run: |
           mkdir -p app/src/main/res/font
-          curl -L "https://github.com/rastikerdar/vazirmatn/releases/download/v33.003/Vazirmatn-fonts.zip" \
+          curl -L "https://github.com/rastikerdar/vazirmatn/releases/download/v33.003/vazirmatn-v33.003.zip" \
             -o vazirmatn.zip
           unzip -o vazirmatn.zip
           find . -name "Vazirmatn-Medium.ttf" | head -1 | xargs -I{} cp {} app/src/main/res/font/vazirmatn_medium.ttf
