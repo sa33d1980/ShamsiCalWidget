@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Home Screen Widget 2×2 — Dark theme base
+    Structure mirrors ShamsiCal iOS widget:
+      [روز هفته]   ← top, small
+      [  ۶  ]      ← center, very large
+      [اسفند ۱۴۰۴] ← bottom, medium
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:padding="8dp">
+
+    <!-- Day of week — top center -->
+    <TextView
+        android:id="@+id/tv_day_of_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/vazirmatn_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.02"
+        android:text="چهارشنبه"
+        android:textColor="@color/widget_text_primary"
+        android:textSize="17sp" />
+
+    <!-- Day number — large, vertically centered -->
+    <TextView
+        android:id="@+id/tv_day_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/vazirmatn_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="۶"
+        android:textColor="@color/widget_text_primary"
+        android:textSize="64sp" />
+
+    <!-- Month + Year — bottom center -->
+    <TextView
+        android:id="@+id/tv_month_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/vazirmatn_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.01"
+        android:text="اسفند ۱۴۰۴"
+        android:textColor="@color/widget_text_secondary"
+        android:textSize="15sp" />
+
+</RelativeLayout>
