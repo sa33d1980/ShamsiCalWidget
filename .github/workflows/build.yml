@@ -34,23 +34,26 @@ jobs:
       - name: Build APKs
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
+      - name: List APKs
+        run: find app/build/outputs/apk/debug/ -name "*.apk" | sort
+
       - name: Upload Universal APK
         uses: actions/upload-artifact@v4
         with:
           name: ShamsiCalWidget-universal
-          path: app/build/outputs/apk/debug/app-debug-universal.apk
+          path: app/build/outputs/apk/debug/*universal*.apk
           retention-days: 30
 
       - name: Upload arm64-v8a APK
         uses: actions/upload-artifact@v4
         with:
           name: ShamsiCalWidget-arm64-v8a
-          path: app/build/outputs/apk/debug/app-debug-arm64-v8a.apk
+          path: app/build/outputs/apk/debug/*arm64*.apk
           retention-days: 30
 
       - name: Upload armeabi-v7a APK
         uses: actions/upload-artifact@v4
         with:
           name: ShamsiCalWidget-armeabi-v7a
-          path: app/build/outputs/apk/debug/app-debug-armeabi-v7a.apk
+          path: app/build/outputs/apk/debug/*v7a*.apk
           retention-days: 30
