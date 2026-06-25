@@ -60,10 +60,14 @@
             </intent-filter>
         </receiver>
 
-        <!-- Daily update service -->
-        <service
+        <!-- Daily update receiver -->
+        <receiver
             android:name=".widget.WidgetUpdateService"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.shamsicalwidget.ACTION_UPDATE_WIDGETS" />
+            </intent-filter>
+        </receiver>>
 
     </application>
 </manifest>
